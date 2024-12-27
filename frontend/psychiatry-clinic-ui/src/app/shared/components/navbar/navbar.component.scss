@@ -1,0 +1,205 @@
+@import '../../styles/variables';
+
+.navbar {
+  padding: 1rem 3rem;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba($primary-color, 0.08);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .nav-brand {
+    a {
+      text-decoration: none;
+      display: block;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.9;
+      }
+      
+      .clinic-name {
+        color: $primary-color;
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+      }
+    }
+  }
+
+  .nav-links {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+
+      li {
+        position: relative;
+        
+        a {
+          color: $text-dark;
+          text-decoration: none;
+          padding: 0.8rem 1.2rem;
+          border-radius: 8px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          display: block;
+          
+          &:hover, &.active {
+            color: $primary-color;
+            background: rgba($primary-color, 0.08);
+          }
+        }
+
+        &.dropdown {
+          &:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+          }
+
+          .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 25px rgba($primary-color, 0.1);
+            padding: 0.5rem;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+
+            li {
+              a {
+                padding: 0.8rem 1rem;
+                border-radius: 6px;
+                
+                &:hover {
+                  background: rgba($primary-color, 0.08);
+                  color: $primary-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .p-button {
+      background: $primary-color;
+      border-color: $primary-color;
+      color: white;
+      
+      &:hover {
+        background: darken($primary-color, 5%);
+        border-color: darken($primary-color, 5%);
+      }
+    }
+
+    .p-button-success {
+      background: $success-color;
+      border-color: $success-color;
+      
+      &:hover {
+        background: darken($success-color, 5%);
+        border-color: darken($success-color, 5%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba($success-color, 0.3);
+      }
+    }
+  }
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .user-name {
+    color: #333;
+    font-weight: 500;
+  }
+
+  button {
+    color: #666;
+    
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+.right-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  button {
+    &.p-button-primary {
+      background: linear-gradient(45deg, #4e54c8, #8f94fb);
+      border: none;
+      box-shadow: 0 4px 15px rgba(78, 84, 200, 0.2);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(78, 84, 200, 0.3);
+      }
+
+      .p-button-icon {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &.p-button-success {
+      background: linear-gradient(45deg, #2ecc71, #27ae60);
+      border: none;
+      box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+      }
+
+      .p-button-icon {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .user-name {
+      color: #333;
+      font-weight: 500;
+    }
+
+    button {
+      color: #666;
+      
+      &:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+}

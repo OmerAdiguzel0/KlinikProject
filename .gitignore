@@ -1,0 +1,21 @@
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Compiled files
+target/
+*.class
+*.jar
+
+# Logs
+*.log
+
+# Environment variables
+.env
+application-dev.properties
+application-prod.properties
+application.properties
+
+# Dependencies
+node_modules/ 

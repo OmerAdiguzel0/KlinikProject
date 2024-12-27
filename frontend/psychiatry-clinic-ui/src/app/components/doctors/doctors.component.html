@@ -1,0 +1,93 @@
+<div class="doctors-container">
+  <app-navbar></app-navbar>
+  <!-- Doktorlar Listesi -->
+  <div class="doctors-content">
+    <div class="doctors-header">
+      <h1>Doktor Kadromuz</h1>
+      <p>Alanında uzman ve deneyimli doktorlarımızla hizmetinizdeyiz</p>
+    </div>
+
+    <!-- Loading spinner -->
+    <div class="loading-spinner" *ngIf="loading">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+
+    <!-- Error message -->
+    <div class="error-message" *ngIf="error">
+      <p>{{ error }}</p>
+    </div>
+
+    <!-- Doctors grid -->
+    <div class="doctors-grid" *ngIf="!loading && !error">
+      <div class="doctor-card" *ngFor="let doctor of doctors">
+        <div class="doctor-image">
+          <img *ngIf="doctor.imageUrl" [src]="doctor.imageUrl" alt="Doctor Profile">
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. {{ doctor.firstName }} {{ doctor.lastName }}</h3>
+          <p class="title">{{ doctor.title }}</p>
+          <p class="specialty">{{ doctor.specialization }}</p>
+          <p class="about">{{ doctor.about }}</p>
+          <div class="button-group">
+            <button pButton label="Detay" class="p-button" (click)="showDetails(doctor)"></button>
+            <button pButton label="Randevu Al" class="p-button-raised p-button-success" routerLink="/login"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- No doctors message -->
+    <div class="no-doctors" *ngIf="!loading && !error && doctors.length === 0">
+      <p>Henüz doktor bulunmamaktadır.</p>
+    </div>
+  </div>
+
+  <!-- Dialog -->
+  <p-dialog 
+    [(visible)]="displayDialog" 
+    [modal]="true" 
+    [style]="{width: '50vw'}"
+    [draggable]="false" 
+    [resizable]="false"
+    header="Doktor Detayları">
+    <div class="doctor-details" *ngIf="selectedDoctor">
+      <div class="detail-row">
+        <label>Ad Soyad:</label>
+        <span>Dr. {{ selectedDoctor.firstName }} {{ selectedDoctor.lastName }}</span>
+      </div>
+      <div class="detail-row">
+        <label>E-posta:</label>
+        <span>{{ selectedDoctor.email }}</span>
+      </div>
+      <div class="detail-row">
+        <label>Telefon:</label>
+        <span>{{ selectedDoctor.phoneNumber }}</span>
+      </div>
+      <div class="detail-row">
+        <label>Uzmanlık Alanı:</label>
+        <span>{{ selectedDoctor.specialization }}</span>
+      </div>
+      <div class="detail-row">
+        <label>Eğitim:</label>
+        <span>{{ selectedDoctor.education }}</span>
+      </div>
+      <div class="detail-row">
+        <label>Sertifikalar:</label>
+        <ul>
+          <li *ngFor="let cert of selectedDoctor.certificates">{{ cert }}</li>
+        </ul>
+      </div>
+      <div class="detail-row">
+        <label>Hakkında:</label>
+        <p>{{ selectedDoctor.about }}</p>
+      </div>
+      <div class="detail-row">
+        <label>Durum:</label>
+        <span [class.available]="selectedDoctor.available" 
+              [class.unavailable]="!selectedDoctor.available">
+          {{ selectedDoctor.available ? 'Müsait' : 'Müsait Değil' }}
+        </span>
+      </div>
+    </div>
+  </p-dialog>
+</div>

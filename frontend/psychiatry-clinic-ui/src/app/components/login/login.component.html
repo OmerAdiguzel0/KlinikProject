@@ -1,0 +1,70 @@
+<div class="login-container">
+  <p-card styleClass="login-card">
+    <ng-template pTemplate="header">
+      <div class="logo-container">
+        <h2>Psikiyatri Kliniği</h2>
+      </div>
+    </ng-template>
+
+    <div class="login-form">
+      <div class="p-fluid">
+        <div class="field">
+          <span class="p-input-icon-left">
+            <i class="pi pi-user"></i>
+            <input 
+              type="email" 
+              pInputText 
+              placeholder="E-posta" 
+              [(ngModel)]="email"
+              name="email"
+              required
+              email
+              [disabled]="loading"
+            >
+          </span>
+        </div>
+
+        <div class="field">
+          <span class="p-input-icon-left">
+            <i class="pi pi-lock"></i>
+            <p-password 
+              [(ngModel)]="password"
+              name="password"
+              [toggleMask]="true" 
+              placeholder="Şifre"
+              [feedback]="false"
+              required
+              [disabled]="loading"
+            ></p-password>
+          </span>
+        </div>
+
+        <button 
+          pButton 
+          label="Giriş Yap" 
+          class="login-button"
+          (click)="onSubmit()"
+          [loading]="loading"
+          [disabled]="!email || !password || loading"
+        ></button>
+
+        <div class="separator">
+          <span>veya</span>
+        </div>
+
+        <button 
+          pButton 
+          label="Google ile Giriş Yap" 
+          icon="pi pi-google" 
+          class="google-button p-button-secondary"
+        ></button>
+
+        <div class="register-link">
+          Hesabınız yok mu? <a routerLink="/register">Kayıt Ol</a>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</div>
+
+<p-toast></p-toast> 

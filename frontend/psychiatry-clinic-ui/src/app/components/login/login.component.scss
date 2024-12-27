@@ -1,0 +1,142 @@
+@import '../../shared/styles/variables';
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #F6F4FF 0%, #EDE7FF 100%);
+  padding: 2rem;
+
+  .login-card {
+    width: 100%;
+    max-width: 480px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba($primary-color, 0.1);
+
+    ::ng-deep .p-card-body {
+      padding: 2.5rem;
+    }
+  }
+
+  .logo-container {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background: linear-gradient(135deg, #F6F4FF 0%, #EDE7FF 100%);
+    border-radius: 15px 15px 0 0;
+
+    h2 {
+      color: $primary-color;
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+  }
+
+  .login-form {
+    .field {
+      margin-bottom: 1.5rem;
+
+      .p-input-icon-left {
+        width: 100%;
+
+        i {
+          color: $text-light;
+        }
+
+        input, .p-password {
+          width: 100%;
+        }
+      }
+    }
+
+    .login-button {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .separator {
+      text-align: center;
+      margin: 1.5rem 0;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 45%;
+        height: 1px;
+        background: rgba($text-light, 0.2);
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+
+      span {
+        background: white;
+        padding: 0 1rem;
+        color: $text-light;
+        font-size: 0.9rem;
+      }
+    }
+
+    .google-button {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      background: white;
+      border: 1px solid rgba($text-light, 0.2);
+      color: $text-dark;
+
+      &:hover {
+        background: #f8f9fa;
+      }
+
+      .pi-google {
+        color: #DB4437;
+      }
+    }
+
+    .register-link {
+      text-align: center;
+      color: $text-light;
+      font-size: 0.9rem;
+
+      a {
+        color: $primary-color;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep {
+  .p-password {
+    width: 100%;
+
+    input {
+      width: 100%;
+      padding-left: 2.5rem !important;
+      padding-right: 2.5rem !important;
+    }
+  }
+
+  .p-card {
+    border-radius: 15px;
+    
+    .p-card-body {
+      padding: 0;
+    }
+  }
+} 

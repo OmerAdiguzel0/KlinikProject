@@ -1,0 +1,241 @@
+@import 'variables';
+
+.doctors-container {
+  min-height: 100vh;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  background: linear-gradient(135deg, #F6F4FF 0%, #EDE7FF 100%);
+  transform-style: preserve-3d;
+  perspective: 1px;
+
+  .navbar {
+    top: 0;
+    left: 0;
+    transform: translateZ(0);
+  }
+
+  .doctors-content {
+    min-height: calc(100vh - #{$navbar-height});
+    padding-top: calc(#{$navbar-height} + 2rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    scroll-snap-align: start;
+
+    .doctors-header {
+      text-align: center;
+      margin-bottom: 4rem;
+
+      h1 {
+        color: $primary-color;
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        letter-spacing: -1px;
+      }
+
+      p {
+        color: $text-light;
+        font-size: 1.3rem;
+        font-weight: 300;
+      }
+    }
+
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+
+      .doctor-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba($primary-color, 0.1);
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba($primary-color, 0.2);
+        }
+
+        .doctor-image {
+          width: 100%;
+          height: 300px;
+          overflow: hidden;
+          background: rgba($primary-color, 0.1);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          &:empty::after {
+            content: '';
+            width: 40%;
+            height: 40%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%236B4DE6' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+        }
+
+        .doctor-info {
+          padding: 1.5rem;
+          text-align: center;
+
+          h3 {
+            color: $text-dark;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+          }
+
+          .title {
+            color: $primary-color;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+          }
+
+          .specialty {
+            color: $text-light;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+          }
+
+          .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+
+            button {
+              flex: 1;
+            }
+
+            .p-button {
+              background: $primary-color;
+              border-color: $primary-color;
+              color: white;
+              
+              &:hover {
+                background: darken($primary-color, 5%);
+                border-color: darken($primary-color, 5%);
+              }
+            }
+
+            .p-button-success {
+              background: $success-color;
+              border-color: $success-color;
+              
+              &:hover {
+                background: darken($success-color, 5%);
+                border-color: darken($success-color, 5%);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba($success-color, 0.3);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive tasarım için media queries
+@media (max-width: 768px) {
+  .doctors-content {
+    padding: 2rem 1rem;
+
+    .doctors-header {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+  padding: 2rem;
+}
+
+.no-doctors {
+  text-align: center;
+  padding: 2rem;
+  color: $text-light;
+}
+
+.nav-buttons {
+  .p-button {
+    background: $primary-color;
+    border-color: $primary-color;
+    color: white;
+    
+    &:hover {
+      background: darken($primary-color, 5%);
+      border-color: darken($primary-color, 5%);
+    }
+  }
+}
+
+.doctor-details {
+  padding: 1rem;
+
+  .detail-row {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      color: $text-light;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    span {
+      color: $text-dark;
+      font-size: 1.1rem;
+      font-weight: 500;
+
+      &.available {
+        color: $success-color;
+      }
+
+      &.unavailable {
+        color: #dc3545;  // kırmızı
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 0.5rem;
+        background: rgba($primary-color, 0.1);
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    p {
+      color: $text-dark;
+      line-height: 1.6;
+    }
+  }
+}

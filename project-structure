@@ -1,0 +1,42 @@
+psychiatry-clinic/
+│
+├── backend/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/
+│   │   │   │       └── psychiatryclinic/
+│   │   │   │           ├── entities/
+│   │   │   │           ├── dataAccess/
+│   │   │   │           ├── business/
+│   │   │   │           ├── core/
+│   │   │   │           ├── api/
+│   │   │   │           └── PsychiatryClinicApplication.java
+│   │   │   └── resources/
+│   │   │       └── application.properties
+│   │   └── test/
+│   └── pom.xml
+│
+└── frontend/
+    └── psychiatry-clinic-ui/
+        ├── src/
+        │   ├── app/
+        │   │   ├── core/
+        │   │   │   ├── guards/
+        │   │   │   ├── interceptors/
+        │   │   │   ├── models/
+        │   │   │   └── services/
+        │   │   ├── shared/
+        │   │   │   ├── components/
+        │   │   │   └── pipes/
+        │   │   ├── features/
+        │   │   │   ├── auth/
+        │   │   │   ├── home/
+        │   │   │   ├── doctor/
+        │   │   │   ├── patient/
+        │   │   │   └── admin/
+        │   │   └── app.component.*
+        │   ├── assets/
+        │   └── environments/
+        ├── angular.json
+        └── package.json

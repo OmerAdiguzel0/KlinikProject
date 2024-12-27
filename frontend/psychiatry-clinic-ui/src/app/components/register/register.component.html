@@ -1,0 +1,153 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="back-button">
+      <button 
+        pButton 
+        type="button" 
+        icon="pi pi-home"
+        class="p-button-rounded p-button-text"
+        routerLink="/"
+        pTooltip="Ana Sayfaya Dön"
+      ></button>
+    </div>
+
+    <h2>Psikiyatri Kliniği</h2>
+
+    <div class="login-form">
+      <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <div class="field">
+          <span class="p-input-icon-left">
+            <i class="pi pi-user"></i>
+            <input 
+              type="text"
+              pInputText
+              [(ngModel)]="registerData.firstName"
+              name="firstName"
+              required
+              minlength="2"
+              maxlength="50"
+              #firstName="ngModel"
+              placeholder="Ad"
+              [disabled]="loading"
+            />
+          </span>
+          <small class="p-error block" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+            <span *ngIf="firstName.errors?.['required']">Ad alanı zorunludur</span>
+            <span *ngIf="firstName.errors?.['minlength']">Ad en az 2 karakter olmalıdır</span>
+            <span *ngIf="firstName.errors?.['maxlength']">Ad en fazla 50 karakter olabilir</span>
+          </small>
+        </div>
+
+        <div class="field">
+          <span class="p-input-icon-left">
+            <i class="pi pi-user"></i>
+            <input 
+              type="text"
+              pInputText
+              [(ngModel)]="registerData.lastName"
+              name="lastName"
+              required
+              minlength="2"
+              maxlength="50"
+              #lastName="ngModel"
+              placeholder="Soyad"
+              [disabled]="loading"
+            />
+          </span>
+          <small class="p-error block" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+            <span *ngIf="lastName.errors?.['required']">Soyad alanı zorunludur</span>
+            <span *ngIf="lastName.errors?.['minlength']">Soyad en az 2 karakter olmalıdır</span>
+            <span *ngIf="lastName.errors?.['maxlength']">Soyad en fazla 50 karakter olabilir</span>
+          </small>
+        </div>
+
+        <div class="field">
+          <span class="p-input-icon-left">
+            <i class="pi pi-envelope"></i>
+            <input 
+              type="email"
+              pInputText
+              [(ngModel)]="registerData.email"
+              name="email"
+              required
+              email
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              #email="ngModel"
+              placeholder="E-posta"
+              [disabled]="loading"
+            />
+          </span>
+          <small class="p-error block" *ngIf="email.invalid && (email.dirty || email.touched)">
+            <span *ngIf="email.errors?.['required']">E-posta alanı zorunludur</span>
+            <span *ngIf="email.errors?.['email'] || email.errors?.['pattern']">Geçerli bir e-posta adresi giriniz</span>
+          </small>
+        </div>
+
+        <div class="field">
+          <span class="p-input-icon-left">
+            <i class="pi pi-lock"></i>
+            <p-password
+              [(ngModel)]="registerData.password"
+              name="password"
+              [toggleMask]="true"
+              required
+              #pwd="ngModel"
+              placeholder="Şifre"
+              [feedback]="false"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+              [disabled]="loading"
+            ></p-password>
+          </span>
+          <small class="p-error block" *ngIf="pwd.invalid && (pwd.dirty || pwd.touched)">
+            <span *ngIf="pwd.errors?.['required']">Şifre alanı zorunludur</span>
+            <span *ngIf="pwd.errors?.['pattern']">Şifre kriterlere uygun değil</span>
+          </small>
+        </div>
+
+        <div class="password-info" *ngIf="pwd.dirty || pwd.touched">
+          Şifreniz en az:
+          <ul>
+            <li [ngClass]="{'valid': hasMinLength()}">8 karakter uzunluğunda</li>
+            <li [ngClass]="{'valid': hasUpperCase()}">Bir büyük harf (A-Z)</li>
+            <li [ngClass]="{'valid': hasLowerCase()}">Bir küçük harf (a-z)</li>
+            <li [ngClass]="{'valid': hasNumber()}">Bir rakam (0-9)</li>
+            <li [ngClass]="{'valid': hasSpecialChar()}">Bir özel karakter (@#$%^&+=)</li>
+          </ul>
+        </div>
+
+        <div class="error-message" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </div>
+
+        <button 
+          pButton 
+          type="submit" 
+          label="Kayıt Ol"
+          class="login-button"
+          [disabled]="!registerForm.valid || loading"
+          [loading]="loading"
+        ></button>
+
+        <div class="divider">
+          <span>veya</span>
+        </div>
+
+        <button 
+          pButton 
+          type="button" 
+          label="Google ile Kayıt Ol"
+          icon="pi pi-google"
+          class="google-button"
+          (click)="signInWithGoogle()"
+          [loading]="isGoogleLoading"
+        ></button>
+
+        <div class="register-link">
+          Hesabınız var mı? <a routerLink="/login">Giriş Yap</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<p-toast></p-toast>

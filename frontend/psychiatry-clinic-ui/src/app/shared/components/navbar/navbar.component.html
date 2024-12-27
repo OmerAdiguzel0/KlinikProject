@@ -1,0 +1,48 @@
+<nav class="navbar">
+  <div class="nav-brand">
+    <a routerLink="/home" (click)="onNavClick($event, 'hero')">
+      <h2 class="clinic-name">Ruh Sağlığı Kliniği</h2>
+    </a>
+  </div>
+
+  <div class="nav-links">
+    <ul>
+      <li><a routerLink="/home" (click)="onNavClick($event, 'hero')">Ana Sayfa</a></li>
+      <li class="dropdown">
+        <a>Hizmetlerimiz</a>
+        <ul class="dropdown-menu">
+          <li><a>Psikoterapi</a></li>
+          <li><a>Psikiyatrik Tedavi</a></li>
+          <li><a>Danışmanlık</a></li>
+        </ul>
+      </li>
+      <li><a routerLink="/doctors" routerLinkActive="active">Doktorlarımız</a></li>
+      <li><a routerLink="/home" (click)="onNavClick($event, 'about')">Hakkımızda</a></li>
+      <li><a routerLink="/home" (click)="onNavClick($event, 'contact')">İletişim</a></li>
+    </ul>
+  </div>
+
+  <div class="right-section">
+    <ng-container *ngIf="!isLoggedIn(); else loggedIn">
+      <button pButton 
+        label="Giriş Yap" 
+        routerLink="/login"
+        class="p-button-primary p-button-raised"
+        icon="pi pi-sign-in"
+      ></button>
+      <button pButton 
+        label="Randevu Al" 
+        routerLink="/login"
+        class="p-button-success p-button-raised"
+        icon="pi pi-calendar-plus"
+      ></button>
+    </ng-container>
+    
+    <ng-template #loggedIn>
+      <div class="user-info">
+        <span class="user-name">{{ currentUser?.firstName }} {{ currentUser?.lastName }}</span>
+        <button pButton icon="pi pi-sign-out" (click)="logout()" class="p-button-text"></button>
+      </div>
+    </ng-template>
+  </div>
+</nav>
