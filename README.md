@@ -6,101 +6,101 @@ Modern psikiyatri kliniklerinin ihtiyaçlarını karşılamak için geliştirilm
 
 ### 🔐 Kullanıcı Yönetimi ve Güvenlik
 
-** Rol tabanlı yetkilendirme (RBAC): Hasta, Doktor ve Admin rolleri
+**Rol tabanlı yetkilendirme (RBAC): Hasta, Doktor ve Admin rolleri**
 
-** JWT tabanlı kimlik doğrulama
+**JWT tabanlı kimlik doğrulama**
 
-** Google OAuth2.0 entegrasyonu
+**Google OAuth2.0 entegrasyonu**
 
-** Güvenli şifre yönetimi ve sıfırlama
+**Güvenli şifre yönetimi ve sıfırlama**
 
 ### 👨‍⚕️ Doktor Modülü
 
-** Hasta randevularını yönetme
+**Hasta randevularını yönetme**
 
-** Çalışma saatlerini düzenleme
+**Çalışma saatlerini düzenleme**
 
-** Hasta geçmişi ve tedavi notları
+**Hasta geçmişi ve tedavi notları**
 
-** Uzmanlık alanı ve sertifika yönetimi
+**Uzmanlık alanı ve sertifika yönetimi**
 
-👤 Hasta Modülü
+### 👤 Hasta Modülü
 
-Online randevu alma ve yönetme
+**Online randevu alma ve yönetme**
 
-Doktor profillerini inceleme
+**Doktor profillerini inceleme**
 
-Tedavi geçmişini takip etme
+**Tedavi geçmişini takip etme**
 
-Fatura ve ödeme işlemleri
+**Fatura ve ödeme işlemleri**
 
-📨 Bildirim Sistemi
+### 📨 Bildirim Sistemi
 
-Otomatik email bildirimleri
+**Otomatik email bildirimleri**
 
-Randevu hatırlatmaları
+**Randevu hatırlatmaları**
 
-WhatsApp entegrasyonu
+**WhatsApp entegrasyonu**
 
-Kendi bildirim şablonlarını oluşturma
+**Kendi bildirim şablonlarını oluşturma**
 
-🛠 Teknoloji Yığını (Tech Stack)
+## 🛠 Teknoloji Yığını (Tech Stack)
 
-Backend
+## Backend
 
-Java 17
+**Java 17**
 
-Spring Boot 3.2.3
+**Spring Boot 3.2.3**
 
-Spring Security
+**Spring Security**
 
-JWT Authentication
+**JWT Authentication**
 
-MongoDB
+**MongoDB**
 
-Maven
+**Maven**
 
-Veritabanı
+### Veritabanı
 
-MongoDB Atlas
+**MongoDB Atlas**
 
-Spring Data MongoDB
+**Spring Data MongoDB**
 
-Email ve Mesajlaşma
+### Email ve Mesajlaşma
 
-Jakarta Mail
+**Jakarta Mail**
 
-Gmail SMTP
+**Gmail SMTP**
 
-Twilio WhatsApp API
+**Twilio WhatsApp API**
 
-Güvenlik
+### Güvenlik
 
-Spring Security
+**Spring Security**
 
-JWT Tokens
+**JWT Tokens**
 
-Google OAuth2.0
+**Google OAuth2.0**
 
-BCrypt şifreleme
+**BCrypt şifreleme**
 
-💻 Kurulum
+### 💻 Kurulum
 
-Ön Gereksinimler
+### Ön Gereksinimler
 
-Java 17 veya üzeri
+**Java 17 veya üzeri**
 
-Maven
+**Maven**
 
-MongoDB
+**MongoDB**
 
-Gmail hesabı (SMTP için)
+**Gmail hesabı (SMTP için)**
 
-Twilio hesabı (WhatsApp bildirimleri için)
+**Twilio hesabı (WhatsApp bildirimleri için)**
 
-Kurulum Adımları
+### Kurulum Adımları
 
-Projeyi klonlayın:
+**Projeyi klonlayın:**
 
 git clone https://github.com/your-username/psychiatry-clinic.git
 cd psychiatry-clinic
@@ -111,15 +111,15 @@ cp backend/src/main/resources/application-example.properties backend/src/main/re
 
 application.properties dosyasını kendi bilgilerinizle güncelleyin:
 
-MongoDB bağlantı bilgileri
+**MongoDB bağlantı bilgileri**
 
-Mail sunucusu ayarları
+**Mail sunucusu ayarları**
 
-OAuth2 client bilgileri
+**OAuth2 client bilgileri**
 
-Twilio API anahtarları
+**Twilio API anahtarları**
 
-Projeyi derleyin:
+**Projeyi derleyin:**
 
 cd backend
 mvn clean install
@@ -128,13 +128,13 @@ Uygulamayı başlatın:
 
 mvn spring-boot:run
 
-📚 API Dokümantasyonu
+### 📚 API Dokümantasyonu
 
-Swagger UI: http://localhost:8080/swagger-ui.html
+**Swagger UI:** http://localhost:8080/swagger-ui.html
 
-Temel Endpointler
+### Temel Endpointler
 
-🛡️ Kimlik Doğrulama
+### 🛡️ Kimlik Doğrulama
 
 POST /api/v1/auth/register: Yeni kullanıcı kaydı
 
@@ -142,7 +142,7 @@ POST /api/v1/auth/login: Kullanıcı girişi
 
 POST /api/v1/auth/refresh-token: Token yenileme
 
-📅 Randevu İşlemleri
+### 📅 Randevu İşlemleri
 
 POST /api/v1/appointments: Yeni randevu oluşturma
 
@@ -150,7 +150,7 @@ GET /api/v1/appointments: Randevuları listeleme
 
 PUT /api/v1/appointments/{id}: Randevu güncelleme
 
-👨‍⚕️ Doktor İşlemleri
+### 👨‍⚕️ Doktor İşlemleri
 
 GET /api/v1/doctors: Doktor listesi
 
@@ -158,31 +158,19 @@ GET /api/v1/doctors/{id}/schedule: Doktor programı
 
 PUT /api/v1/doctors/{id}/availability: Müsaitlik durumu güncelleme
 
-🔒 Güvenlik Önlemleri
+### 🔒 Güvenlik Önlemleri
 
-Tüm şifreler BCrypt ile hashlenir
+**Tüm şifreler BCrypt ile hashlenir**
 
-JWT token'ları 24 saat geçerlidir
+**JWT token'ları 24 saat geçerlidir**
 
-Hassas bilgiler environment variable'lar ile yönetilir
+**Hassas bilgiler environment variable'lar ile yönetilir**
 
-CORS politikaları düzenlenmiştir
+**CORS politikaları düzenlenmiştir**
 
-Rate limiting uygulanmıştır
+**Rate limiting uygulanmıştır**
 
-🤝 Katkıda Bulunma
+### 📝 Lisans
 
-Projeyi fork'layın.
-
-Yeni bir branch oluşturun (git checkout -b feature/yeni-ozellik).
-
-Değişikliklerinizi commit edin (git commit -m 'feat: Yeni bir özellik ekle').
-
-Branch'inizi push edin (git push origin feature/yeni-ozellik).
-
-Pull Request oluşturun.
-
-📝 Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır.
+**Bu proje MIT lisansı altında lisanslanmıştır.**
 
