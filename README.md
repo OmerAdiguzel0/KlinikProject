@@ -109,7 +109,7 @@ application-example.properties dosyasını application.properties olarak kopyala
 
 cp backend/src/main/resources/application-example.properties backend/src/main/resources/application.properties
 
-application.properties dosyasını kendi bilgilerinizle güncelleyin:
+**application.properties dosyasını kendi bilgilerinizle güncelleyin:**
 
 **MongoDB bağlantı bilgileri**
 
