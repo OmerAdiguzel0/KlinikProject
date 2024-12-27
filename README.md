@@ -185,4 +185,3 @@ Pull Request oluşturun.
 📝 Lisans
 
 Bu proje MIT lisansı altında lisanslanmıştır.
-
