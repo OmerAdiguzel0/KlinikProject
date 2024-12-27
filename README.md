@@ -44,7 +44,7 @@ Modern psikiyatri kliniklerinin ihtiyaçlarını karşılamak için geliştirilm
 
 **Kendi bildirim şablonlarını oluşturma**
 
-## 🛠 Teknoloji Yığını (Tech Stack)
+### 🛠 Teknoloji Yığını (Tech Stack)
 
 ### Backend
 
