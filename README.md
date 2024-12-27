@@ -1,28 +1,28 @@
-🏥 Psikiyatri Kliniği Yönetim Sistemi
+## 🏥 Psikiyatri Kliniği Yönetim Sistemi
 
 Modern psikiyatri kliniklerinin ihtiyaçlarını karşılamak için geliştirilmiş kapsamlı bir yönetim sistemi. Hasta-doktor etkileşimlerini, randevuları ve tedavi süreçlerini dijital ortamda kolayca yönetmenizi sağlar.
 
-🌟 Öne Çıkan Özellikler
+### 🌟 Öne Çıkan Özellikler
 
-🔐 Kullanıcı Yönetimi ve Güvenlik
+### 🔐 Kullanıcı Yönetimi ve Güvenlik
 
-Rol tabanlı yetkilendirme (RBAC): Hasta, Doktor ve Admin rolleri
+** Rol tabanlı yetkilendirme (RBAC): Hasta, Doktor ve Admin rolleri
 
-JWT tabanlı kimlik doğrulama
+** JWT tabanlı kimlik doğrulama
 
-Google OAuth2.0 entegrasyonu
+** Google OAuth2.0 entegrasyonu
 
-Güvenli şifre yönetimi ve sıfırlama
+** Güvenli şifre yönetimi ve sıfırlama
 
-👨‍⚕️ Doktor Modülü
+### 👨‍⚕️ Doktor Modülü
 
-Hasta randevularını yönetme
+** Hasta randevularını yönetme
 
-Çalışma saatlerini düzenleme
+** Çalışma saatlerini düzenleme
 
-Hasta geçmişi ve tedavi notları
+** Hasta geçmişi ve tedavi notları
 
-Uzmanlık alanı ve sertifika yönetimi
+** Uzmanlık alanı ve sertifika yönetimi
 
 👤 Hasta Modülü
 
