@@ -46,9 +46,9 @@ Kendi bildirim şablonlarını oluşturma
 
 🛠 Teknoloji Yığını (Tech Stack)
 
-### Backend
+Backend
 
-**Java 17**
+Java 17
 
 Spring Boot 3.2.3
 
@@ -185,3 +185,4 @@ Pull Request oluşturun.
 📝 Lisans
 
 Bu proje MIT lisansı altında lisanslanmıştır.
+
