@@ -46,7 +46,7 @@ Modern psikiyatri kliniklerinin ihtiyaçlarını karşılamak için geliştirilm
 
 ## 🛠 Teknoloji Yığını (Tech Stack)
 
-## Backend
+### Backend
 
 **Java 17**
 
